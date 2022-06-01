@@ -509,7 +509,7 @@ def parse_rrule(component, tz=UTC):
                     # Handle summer/winter time
                     rrules[index]["UNTIL"] = [
                         normalize(until, UTC)
-                        + tz.utcoffset(component["dtstart"].dt, is_dst=True)
+                        + tz.utcoffset(component["dtstart"].dt)
                         for until in rrules[index]["UNTIL"]
                     ]
 
